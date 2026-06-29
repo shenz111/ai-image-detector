@@ -1,0 +1,26 @@
+# AI Image Detector Configuration
+data:
+  root: "data"
+  batch_size: 32
+  num_workers: 2
+  train_ratio: 0.8
+  image_size: 224
+
+model:
+  out_dim: 256
+  classifier_hidden: 128
+  dropout: 0.3
+
+training:
+  epochs: 20
+  lr: 0.0003
+  weight_decay: 0.0005
+  save_dir: "checkpoints"
+  save_interval: 1
+  log_interval: 10
+  early_stop_patience: 5
+  lr_scheduler: "plateau"
+  lr_factor: 0.5
+  lr_patience: 2
+
+device: "auto"
